@@ -8,7 +8,7 @@ $psswd = md5($_POST["pswd"]);
 $cnfrpsswd = md5($_POST["cfmpswd"]);
 var_dump($fname,$lname,$email,$username,$psswd,$cnfrpsswd);
 
-$localhost = "localhost:8111";
+$localhost = "localhost:8111";   // Here mention your localhost portnumber 
 $mysql_username = "root";
 $password = "";
 $dbname = "aakash_schema";
