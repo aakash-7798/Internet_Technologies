@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+    <style>
+        body{
+            background-image:url("Blue_Background.jpg");
+            font-size: 14px;
+            font-family: Verdana, sans-serif;}
+        input{
+            /*border-radius: 25px;*/
+            width: 70%;}
+        button{
+            border-radius: 30px;
+            background-color:lightblue;}
+    </style>
+</head>
+<body>
+
+<script type="text/javascript" src="Registration_Form.js">
+</script>
+
+<center>
+    <p style="font-size: 30px">REGISTER</p>
+    <!--    <form name = "Rgstrform" action="Registration_Form.php" method="post"  >-->
+    <form name = "Rgstrform" onsubmit="validateform()"  >
+        <table>
+            <tbody>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <td></td>
+                <td></td>
+            <td colspan="2">
+                <label for="fn">FirstName<span style="color: red"> * </span> </label>
+            </td>
+            <td colspan="5"><input type="text" id="fn" name="fname" required="required"  onchange="validate_firstname()"/>
+            </td>
+                <td  colspan="2"><p  style="color:red;font-size: 10px" id = "fnm"> </p>
+                </td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <label for="ln">LastName<span style="color: red"> * </span> </label>
+                </td>
+                <td colspan="5"><input type="text" id="ln" name="lname" required="required" onchange="validate_lastname()"/>
+                </td>
+                <td colspan="2"><p style="color:red;font-size: 10px" id = "lnm"> </p>
+                </td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <label for="email">Email<span style="color: red"> * </span> </label>
+                </td>
+                <td colspan="5">
+                    <input type="email" id="email" name="email" required="required"  onchange="validate_email()"/>
+                </td>
+                <td >
+                    <p style="color:red;font-size: 10px" id = "eml"> </p>
+                </td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2" rowspan="2">
+                    <label for="usrnme">Username
+                        <span style="color: red"> * </span>
+                        <div style="color:red;font-size: 10px">
+                             username consists of 8 to 20 characters  it can only contain alphanumeric characters and underscores.
+                             First character of username should be alphanumeric character i.e either [a z] or [A Z]
+                        </div>
+                    </label>
+                </td>
+                <td colspan="5">
+                    <input type="text" id="usrnme" name="usernme" required="required" onchange="validate_username()" />
+                </td>
+                <td >
+                    <p style="color:red;font-size: 10px" id = "usnme"> </p>
+                </td>
+            </tr>
+            <tr></tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2" rowspan="2">
+                    <label for="psd">Password
+                        <span style="color: red"> * </span>
+                        <div style="color:red;font-size: 10px">Minimum 8 and maximum 16 characters, at least one uppercase letter, one lowercase letter, one number and one special character</div>
+                    </label>
+                <td colspan="5">
+                <input type="password" id="psd" name="pswd" required="required"  onchange="validate_password()"/>
+                </td>
+                <td >
+                    <p style="color:red;font-size: 10px" id = "pswwd"></p>
+                </td>
+            </tr>
+
+            <tr></tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <label for="cfmpsd">ConfirmPassword<span style="color: red"> * </span></label>
+                <td colspan="5">
+                <input type="password" id="cfmpsd"  name="cfmpswd" required="required"  onchange="validate_confirmpassword()" />
+                </td>
+                <td >
+                    <p style="color:red;font-size: 10px" id = "cnfrpswd"> </p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <button >Submit</button>
+    </form>
+</center>
+
+</body>
+</html>
