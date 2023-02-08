@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+
+<!--    CSS     -->
+    <style>
+        body{
+            background-image:url("Blue_Background.jpg");
+            font-size: 16px;
+            /*font-family: "Lucida Console", "Courier New", monospace;*/
+            font-family: Verdana, sans-serif;
+
+        }
+        input{
+            border-radius: 25px;
+            width: 35%;
+        }
+        button{
+            border-radius: 30px;
+            background-color:lightblue;
+        }
+        /*label{*/
+        /*    float: left;*/
+        /*    display: table-cell;*/
+        /*    width: 1px;*/
+        /*    white-space: nowrap*/
+        /*}*/
+
+
+    </style>
+
+
+</head>
+<body>
+
+<!--JAVASCRIPT-->
+<script>
+
+    function validate_firstname(){
+        var fname = document.forms["Rgstrform"]["fname"].value;
+        if(fname==null || fname==""){
+            document.getElementById("fnm").innerHTML = "FirstName is Empty..";
+        }
+        else if(fname!=null || fname!="")
+        {
+            var regx = /^[A-Za-z ]+$/;
+            if(!regx.test(fname)){
+                document.getElementById("fnm").innerHTML = "Field should not contain numericals or specialcharacters..";
+            }
+            else{
+                document.getElementById("fnm").innerHTML= "<span style='color: green; font-size:15px'>&#x2713;</span>";
+                // document.getElementById("fnm").innerHTML = "";
+            }
+        }
+    }
+
+    function validate_lastname(){
+        var lname = document.forms["Rgstrform"]["lname"].value;
+        if(lname==null || lname==""){
+            document.getElementById("lnm").innerHTML = "LastName is Empty..";
+        }
+        else if(lname!=null || lname!="")
+        {
+            var regx = /^[A-Za-z ]+$/;
+            if(!regx.test(lname)){
+                document.getElementById("lnm").innerHTML = "Field should not contain numericals or specialcharacters..";
+            }
+            else{
+                document.getElementById("lnm").innerHTML = "<span style='color: green; font-size:15px'>&#x2713;</span>";
+            }
+        }
+    }
+
+    function validate_email(){
+        var email = document.forms["Rgstrform"]["email"].value;
+        if(email==null || email==""){
+            document.getElementById("eml").innerHTML = "Email is Empty..";
+        }
+        else if(email!=null || email!=""){
+            var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(!regex.test(email)){
+                document.getElementById("eml").innerHTML = "Invalid Email..";
+            }
+            else{
+                document.getElementById("eml").innerHTML = "<span style='color: green; font-size:15px'>&#x2713;</span>";
+            }
+        }
+    }
+
+    // https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+
+    function validate_password(){
+        var psswd = document.forms["Rgstrform"]["pswd"].value;
+        if(psswd==null || psswd==""){
+            document.getElementById("pswwd").innerHTML = "Password is Empty";
+        }
+        else if(psswd!=null || psswd!=""){
+            if(psswd.length<8){
+                document.getElementById("pswwd").innerHTML = "Your password must be at least 8 characters";
+            }
+            else{
+                if(psswd.length < 16){
+                    // var regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*].{6,16}$/;
+                    // Minimum eight and maximum 16 characters, at least one uppercase letter, one lowercase letter, one number and one special character:
+                    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/
+
+                    if (!regex.test(psswd)) {
+                        document.getElementById('pswwd').innerHTML = "Invalid Password Pattern"
+                    }
+                    else{
+                        document.getElementById("pswwd").innerHTML = "<span style='color: green; font-size:15px'>&#x2713;</span>";
+                    }
+                }
+                else{
+                    document.getElementById("pswwd").innerHTML = "Your password must be between 8 and 16 characters..";
+                }
+            }
+
+        }
+
+    }
+
+    function validate_confirmpassword(){
+        var psswd = document.forms["Rgstrform"]["pswd"].value;
+        var cnfmpsswd = document.forms["Rgstrform"]["cfmpswd"].value;
+        if(cnfmpsswd==null || cnfmpsswd==""){
+            document.getElementById("cnfrpswd").innerHTML = "ConfirmPassword is Empty";
+        }
+        if(psswd == null || psswd == ""){
+            document.getElementById("cnfrpswd").innerHTML = "Above Password is Empty";
+        }
+        else{
+        if(psswd==cnfmpsswd){
+            document.getElementById("cnfrpswd").innerHTML = "<span style='color: green; font-size: 10px'>Password Matched &#x2713;</span>";
+        }
+        else{
+            document.getElementById("cnfrpswd").innerHTML = "Password Not Matching"
+        }
+        }
+    }
+
+    // function validateform(){
+    //
+    //     var fname = document.forms["Rgstrform"]["fname"].value;
+    //     var lname = document.forms["Rgstrform"]["lname"].value;
+    //     var email = document.forms["Rgstrform"]["email"].value;
+    //     var psswd = document.forms["Rgstrform"]["pswd"].value;
+    //     var cnfmpsswd = document.forms["Rgstrform"]["cfmpswd"].value;
+    //
+    //
+    //         if((fname == null || fname=="") &&  (lname == null || lname=="") && (email == null || email=="") && (psswd == null || psswd=="") && (cnfmpsswd == null || cnfmpsswd==""))
+    //         {
+    //             alert("All Fields are Empty...");
+    //         }
+    //         else
+    //         {
+    //             if(fname == null || fname=="")
+    //             {
+    //                 // alert("FirstName is Empty");
+    //                 // setTimeout(function(){document.getElementById("fnm").innerHTML = "FirstName is Empty"},100000);
+    //                 document.getElementById("fnm").innerHTML = "FirstName is Empty";
+    //                 return false;
+    //             }
+    //             else if(fname !=null || fname!= "")
+    //             {
+    //                 var regx = /^[A-Za-z ]+$/;
+    //                 if(!regx.test(fname)){
+    //                     {
+    //                         // alert( "Enter Only Characters for FirstName");
+    //                         // setTimeout(function(){document.getElementById("fnm").innerHTML = "Enter Only Characters for FirstName"},100000);}
+    //                         document.getElementById("fnm").innerHTML = "Enter Only Characters for FirstName";
+    //                 }
+    //             }}
+    //
+    //                 if (lname == null || lname == "") {
+    //                     document.getElementById("lnm").innerHTML = "LastName is Empty";
+    //                 }
+    //                 if (email == null || email == "") {
+    //                     // alert("Email is Empty");
+    //                     // setTimeout(function(){document.getElementById("eml").innerHTML = "Email is Empty"},10000);
+    //                     document.getElementById("eml").innerHTML = "Email is Empty";
+    //                 }
+    //                 if (psswd == null || psswd == "") {
+    //                     // alert("Password is Empty");
+    //                     // setTimeout(function(){document.getElementById("pswwd").innerHTML = "Password is Empty"},10000);
+    //                     document.getElementById("pswwd").innerHTML = "Password is Empty";
+    //                 }
+    //                 if (cnfmpsswd == null || cnfmpsswd == "") {
+    //                     // alert("ConfirmPassword is Empty");
+    //                     // setTimeout(function(){document.getElementById("cnfrpswd").innerHTML = "ConfirmPassword is Empty"},10000);
+    //                     document.getElementById("cnfrpswd").innerHTML = "ConfirmPassword is Empty";
+    //                 }
+    //
+    //             }
+    // }
+
+</script>
+
+
+
+<center>
+    <h1>REGISTRATION FORM</h1>
+<br>
+<!--    <form name = "Rgstrform" action="Registration_Form.php" method="post"  >-->
+    <form name = "Rgstrform" onsubmit="validateform()"  >
+            <br>
+        <label for="fn">First Name<span style="color: red"> * </span> </label>
+        <input type="text" id="fn" name="fname" required="required"  onchange="validate_firstname()"/>
+<!--            <input type="text" id="fn" name="fname" required="required" onclick="validate_firstname()" onchange="validate_firstname()"/>-->
+        <p  style="color:red;font-size: 10px" id = "fnm"> </p>
+        <br>
+
+        <label for="ln">Last Name<span style="color: red"> * </span> </label>
+        <input type="text" id="ln" name="lname" required="required" onchange="validate_lastname()"/>
+<!--        <input type="text" id="ln" name="lname" required="required" onclick="validate_lastname()" onchange="validate_lastname()"/>-->
+        <p style="color:red;font-size: 10px" id = "lnm"> </p>
+        <br>
+
+        <label for="email">Email<span style="color: red"> * </span> </label>
+        <input type="email" id="email" name="email" required="required"  onchange="validate_email()"/>
+<!--        <input type="email" id="email" name="email" required="required" onclick="validate_email()" onchange="validate_email()"/>-->
+        <p style="color:red;font-size: 10px" id = "eml"> </p>
+        <br>
+
+        <label for="psd">Password<span style="color: red"> * </span></label>
+        <input type="password" id="psd" name="pswd" required="required"  onchange="validate_password()"/>
+<!--        <input type="password" id="psd" name="pswd" required="required" onclick="validate_password()" onchange="validate_password()"/>-->
+
+        <p style="color:red;font-size: 10px" id = "pswwd"> </p>
+        <br>
+
+        <label for="cfmpsd">Confirm Password<span style="color: red"> * </span></label>
+        <input type="password" id="cfmpsd"  name="cfmpswd" required="required"  onchange="validate_confirmpassword()" />
+<!--        <input type="password" id="cfmpsd"  name="cfmpswd" required="required" onclick="validate_confirmpassword()" onchange="validate_confirmpassword()" />-->
+        <p style="color:red;font-size: 10px" id = "cnfrpswd"> </p>
+        <br><br>
+        <button >Submit</button>
+    </form>
+</center>
+
+</body>
+</html>
