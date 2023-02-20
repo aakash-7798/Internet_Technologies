@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+</head>
+<body>
+<center>
+  <h1>
+    PAYMENT BY CREDIT CARD
+  </h1>
+</center>
+<script type="text/javascript" src="payvalidation.js">
+</script>
+<form name="payform" method="post" action="payment" onsubmit="return frmvalidation()">
+  <br><br><br>
+  <table align="center">
+<!--     
+    <tr>
+      <td>
+        <h4>Total Amount   : </h4>
+      </td>
+      <td>
+     <p id="toamt"></p>
+        <input type="text" name="amt" required="required">
+      </td>
+      -->
+    </tr>
+    <tr>
+      <td>
+        <h4>
+          CREDIT CARD NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h4>
+      </td>
+      <td>
+        <input type="text" name = "crdcd" required="required" >
+      </td>
+    </tr>
+    
+    <tr></tr>
+    
+    <tr>
+      <td>
+        <h4>
+          PASSWORD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </h4>
+      </td>
+      <td>
+        <input type="password" name = "pswd" required="required" >
+      </td>
+    </tr>
+    <tr></tr><tr></tr><tr></tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="submit" value="PROCEED TO PAY">
+      </td>
+    </tr>
+  </table>
+</form>
+<br><br>
+
+<b style="color: red"> INSTRUCTIONS FOR CREDITCARDNUMBER</b>
+<p>1. CreditCard is a 16 digit number</p>
+<p>2. First 10 digit is your phone number and remaining 6 digits is last six digits of your phone number</p>
+<p>3. Example( phno.1234567890  --> creditcardnumber = 1234567890567890)</p> 
+</body>
+</html>

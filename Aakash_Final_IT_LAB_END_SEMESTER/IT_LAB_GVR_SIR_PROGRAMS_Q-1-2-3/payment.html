@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+</head>
+<body>
+<center>
+  <h1>
+    Payment by Credit Card
+  </h1>
+</center>
+<script type="text/javascript" src="payvalidation.js">
+</script>
+<form name="payform" method="post" action="order.html" onsubmit="frmvalidation()">
+  <br><br><br><br><br>
+  <table align="center">
+    <tr>
+      <td>
+        <h4>Total Amount   : </h4>
+      </td>
+      <td>
+<!--          <p id="toamt"></p>-->
+        <input type="text" name="amt" required="required">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4>
+          Credit Card Number
+        </h4>
+      </td>
+      <td>
+        <input type="text" name = "crdcd"required="required" >
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="submit" value="Pay">
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

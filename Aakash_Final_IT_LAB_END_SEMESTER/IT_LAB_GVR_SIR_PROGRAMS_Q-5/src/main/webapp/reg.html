@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--  <meta charset="ISO-8859-1">-->
+<title>Registration</title>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"> -->
+</head>
+<body>
+<h1 align="center" >REGISTERATION FOR AAKASH ONLINE BOOK STORAGE </h1>
+<script type="text/javascript" src="reg_validate.js"></script>
+<form name="regform" action="reg" method="post" onsubmit="return reg_validate()">
+<br><br><br><br><br><br>
+<table align="center">
+  <tr>
+      <td >FirstName</td>
+      <td>
+       <input type="text" id="fn" name="fname" required="required"/>
+     </td>
+   </tr>
+   <tr>
+     <td>LastName</td>
+      <td>
+      <input type="text" id="ln" name="lname" required="required"/>
+     </td>
+     </tr>
+     <tr>
+     <td>Email</td>
+     <td>
+     <input type="email" id="eml" name="email" required="required"/>
+     </td>
+     </tr>
+     <tr>
+     <td>Gender</td>
+     <td><input type="radio" name="gender" value="Male" required="required">Male&nbsp;&nbsp;
+     <input type="radio" name="gender" value="Fema le" required="required">Female</td>
+     </tr>
+     <tr>
+     <td>LoginId</td>
+     <td>
+     <input type="text" id="lid" name="lgnid" required="required" placeholder="CollegeId eg.21031F0005"/>
+     </td>
+     </tr>
+     
+     <tr>
+     <td>Password</td>
+     <td>
+      <input type="password" id="psd" name="pswd" required="required"/>
+      </td>
+      </tr>
+      <tr>
+      <td>Contact</td>
+      <td>
+      <input type="text" id="phn" name="phno" required="required"/>
+      </td>
+      </tr>
+      <tr>
+     <td>Address</td>
+     <td>
+     <select name="address" required>
+     <option value="">select state</option>
+     <option value="Telangana"> Telangana</option>
+     <option value="AndhraPradesh">AndhraPradesh</option>
+     <option value="TamilNadu">TamilNadu</option>
+     <option value="Karnataka">Karnataka</option>
+     <option value="Kerala">Kerala</option>
+     </select>
+      </td>
+      </tr>
+      </table>
+    <div align="center">
+    <br><br>
+    <input type="submit" value="Register" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" value="Clear"/>
+    </div>
+    
+     <!--
+      <input type="text" id="ad" name="addrs" required="required" placeholder="Enter Only State.."/> 
+       -->
+     
+</form>
+<br><br>
+<b style="color: red">
+  Instructions for LoginId, Password and  MobileNumber
+</b>
+<p>
+ 1. LoginID consists of 9 digits and 1 character
+  ,6th Space is alphabet and 
+  remaining are digits
+</p>
+
+<p>
+  2. Password consists of
+  minimum 8 and maximum 16 characters,
+  at least
+  one upper case letter,
+  one lower case letter,
+  one number and one special character:
+</p>
+<p>
+  3. Mobile Number should be exactly 10 digits
+  ,No need to mention country code,
+  Just enter 10Digit number.
+
+</p>
+</body>
+</html>

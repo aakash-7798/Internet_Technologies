@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">-->
+</head>
+<body>
+<script type="text/javascript" src="regvalidation.js">
+</script>
+<form name="regform" onsubmit="return frmvalidation()">
+  <center>
+    <table>
+      <caption>
+        <br>
+        <h3> Registration Form
+        <br>
+        </h3>
+        <br>
+      </caption>
+        <tr>
+        <td>
+          FirstName
+        </td>
+        <td>
+          <input type="text" id="fn" name="fname" required="required">
+          <br>
+        </td>
+        </tr>
+      <tr>
+        <td>
+          LastName
+        </td>
+        <td>
+          <input type="text" id = "ln" name="lname" required="required">
+          <br>
+        </td>
+      <tr>
+        <td> Email </td>
+        <td><input type="email" name="eml" required="required"><br></td>
+      </tr>
+      <tr>
+        <td> Username </td>
+        <td><input type="text" name="usrnm" required="required"><br></td>
+      </tr>
+      </tr>
+        <td> Password  </td>
+        <td> <input type="password" name="pswd" required="required"><br></td>
+        </tr>
+
+      <td>
+        Mobile Number
+      </td>
+      <td><input type="text" name="phno" required="required"><br></td>
+      </tr>
+      <tr>
+        <td valign="top"> Gender  </td>
+        <td>
+          <input type="radio" name="gender" value="Male" required="required">Male<br>
+          <input type="radio" name="gender" value="Female" required="required">Female<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Address
+        </td>
+        <td>
+          <textarea name="address" rows="4" cols="30" required="required"></textarea><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" value="Submit">
+        </td>
+        <td>
+          <input type="reset" value="Reset">
+        </td>
+      </tr>
+    </table>
+  </center>
+</form>
+<br>
+<b style="color: red">
+  Instructions for Username,Password and Mobile Number
+</b>
+<p>
+ 1. username consists of 8 to 20 characters
+  it can only contain alphanumeric characters and underscores
+  first character of username should be alphanumeric character i.e either [a z] or [A Z]
+</p>
+
+<p>
+  2. Password consists of
+  minimum 8 and maximum 16 characters,
+  at least
+  one uppercase letter,
+  one lowercase letter,
+  one number and one special character:
+</p>
+<p>
+  3. Mobile Number should be exactly 10 digits
+  ,No need to mention country code,
+  Just enter 10Digit number.
+
+</p>
+</body>
+</html>
