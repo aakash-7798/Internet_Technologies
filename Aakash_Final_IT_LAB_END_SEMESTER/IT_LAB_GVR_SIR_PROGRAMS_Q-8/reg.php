@@ -83,7 +83,9 @@ $insert_values = "Insert into"." ".$tab_name." "."(FirstName,LastName,Email,Gend
 
     mysqli_stmt_bind_param($stmt,'ssssssss',$Firstname,$Lastname,$email,$gender,$loginid,$password,$contact,$address);
     mysqli_stmt_execute($stmt);
-    echo "<br> Data Submitted Succesfully...";
+//     echo "<br> Data Submitted Succesfully...";
+    echo "<br><br> <center><h1>Your ReGistration is Successfull  <span style='color: green; font-size:30px'>&#x2713;</span></h1></center> <br><br>".
+    "<center><h4>ThankYou For ReGisterinG<p>&#128512;</p></h4> <br><br>Click here to --> <a href='login.html'>Login </a> </center>";
 
 }
 
