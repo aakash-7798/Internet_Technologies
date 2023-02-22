@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+</head>
+<body>
+<script type="text/javascript" src="shpvalidate.js">
+    </script>
+    
+<center>
+    <h1>SHOPPING CART</h1>
+</center>
+    <br><br><br>
+    
+<form name = "shpfrm" method="post" action="shopping" onsubmit="return shp_validate()">
+    <table align="center">
+        <tr>
+            <td>
+                BOOKS/MAGAZINES 
+            </td>
+            <td>
+                <select name="booklist" required>
+                    <option value="">Select Only One Book (Adhe Ekkuva Neeku)</option>
+                    <optgroup label="Hardware Books">
+                        <option value="The Complete Reference PC Hardware">The Complete Reference PC Hardware</option>
+                        <option value="Computer Hardware">Computer Hardware</option>
+                        <option value="Modern Computer Hardware">Modern Computer Hardware</option>
+                    </optgroup>
+                    <optgroup label="Software Books">
+                        <option value="Java The Complete Reference">Java The Complete Reference</option>
+                        <option value="Automate the Boring Stuff With Python">Automate the Boring Stuff With Python</option>
+                        <option value="Flutter and Dart Cookbook">Flutter and Dart Cookbook </option>
+                    </optgroup>
+                    <optgroup label="Magazines">
+                        <option value="TimesNow">TimesNow</option>
+                        <option value="Forbes">Forbes </option>
+                        <option value="NewYork Magazine">NewYork Magazine</option>
+                    </optgroup>
+                    
+                    
+<!--                    <optgroup label="Select the book">-->
+<!--                        <option selected="select the book">Select the book</option>-->
+<!--                        <option value="JAVA">JAVA</option>-->
+<!--                        <option value="PYTHON">PYTHON</option>-->
+<!--                        <option value="FLUTTER">FLUTTER</option>-->
+<!--                        <option value="MYSQL">MYSQL</option>-->
+<!--                        <option value="AWS">AWS</option>-->
+<!--                    </optgroup>-->
+
+
+                </select>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                QUANTITY
+            </td>
+            <td>
+                <input type="text" id="qty" name="qnty" required="required">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                    <input type="submit" value="PLACE ORDER"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
