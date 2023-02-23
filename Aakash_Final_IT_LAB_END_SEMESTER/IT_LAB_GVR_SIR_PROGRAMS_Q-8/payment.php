@@ -58,7 +58,7 @@ function result_status_failure(){
         "AAKASH ONLINE BOOK STORAGE\r\n".
         "  </h1><br><br><h1>YOUR PAYMENT TRANSACTION FAILED  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <br><br>".
         "<center><h3>ORDER ONCE AGAIN<p STYLE='font-size: 40px;'>&#128542;</p></h3>".
-        "<br><br<a href='shoppingcart.html'><input type='submit' value='ORDER AGAIN'></a> </center>";
+        "<br><br><a href='shoppingcart.html'><input type='submit' value='ORDER AGAIN'></a> </center>";
 }
 
 
