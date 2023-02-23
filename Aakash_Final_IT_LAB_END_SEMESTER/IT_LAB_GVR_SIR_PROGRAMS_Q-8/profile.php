@@ -16,8 +16,8 @@ $password = md5($_POST["pswd"]);
 $password_query = mysqli_query($connection,"select Password from {$table_name} where Password = '{$password}'");
 $password_query_result = mysqli_fetch_all($password_query);
 
-if(isset($password_query_result[0][0])==$password){
-    $data_query = mysqli_query($connection,"select * from {$table_name}");
+if($password_query_result[0][0]==$password){
+    $data_query = $data_query = mysqli_query($connection,"select * from {$table_name} where Password = '{$password}'");
     $data_query_result = mysqli_fetch_all($data_query);
     echo "<br><br><br><center><h3>  MY PERSONAL INFORMATION  </h3></center><br>".
         "<center><p>".
