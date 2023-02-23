@@ -17,7 +17,7 @@
 
 // Establish a connection to xampp server
 // Change the below port number to the portnumber what you see when you start mysql in xampp
-$server_name = "localhost:3306";
+$server_name = "localhost:8111";
 // The following are same for every xampp server by default;
 $server_username = "root";
 $server_password = "";
@@ -63,36 +63,36 @@ function fn_table_check($tables,$table_name){
 }
 
 function send_data_to_server($connection,$tab_name){
-$Firstname = $_POST["fname"];
-$Lastname = $_POST["lname"];
-$email = $_POST["email"];
-$gender = $_POST["gender"];
-$loginid = $_POST["lgnid"];
+    $Firstname = $_POST["fname"];
+    $Lastname = $_POST["lname"];
+    $email = $_POST["email"];
+    $gender = $_POST["gender"];
+    $loginid = $_POST["lgnid"];
 //Converting the password to md5 hasing algorithm
-$password = md5($_POST["pswd"]);
-$contact = $_POST["phno"];
-$address = $_POST["address"];
+    $password = md5($_POST["pswd"]);
+    $contact = $_POST["phno"];
+    $address = $_POST["address"];
 
-$insert_values = "Insert into"." ".$tab_name." "."(FirstName,LastName,Email,Gender,LoginId,Password,Contact,Address) values (?,?,?,?,?,?,?,?)";
+    $insert_values = "Insert into"." ".$tab_name." "."(FirstName,LastName,Email,Gender,LoginId,Password,Contact,Address) values (?,?,?,?,?,?,?,?)";
 
     $stmt = mysqli_stmt_init($connection);
 
     if(!mysqli_stmt_prepare($stmt,$insert_values)){
         die(mysqli_error($connection));
-        echo " <br><br> <center><h1>Your ReGistration is Unsuccessfull  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <br><br> ".
-            "<center><h4>ReGister Once Again <p>&#128542;</p></h4> <br><br>Click here to --> <a href='reg.html'>Register</a> </center>";
+        echo " <br><br> <center><h1>YOUR REGISTRATION IS  UNSUCCESSFULL  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <br><br> ".
+            "<center><h4>REGISTER ONCE AGAIN <p style='font-size:40px'>&#128542;</p></h4> <h4><br> CLICK BELOW TO REGISTER</h4><br><br><a href='reg.html'><input type='submit' value =Register ></a> </center>";
     }
 
     mysqli_stmt_bind_param($stmt,'ssssssss',$Firstname,$Lastname,$email,$gender,$loginid,$password,$contact,$address);
     mysqli_stmt_execute($stmt);
 //     echo "<br> Data Submitted Succesfully...";
-    echo "<br><br> <center><h1>Your ReGistration is Successfull  <span style='color: green; font-size:30px'>&#x2713;</span></h1></center> <br><br>".
-    "<center><h4>ThankYou For ReGisterinG<p>&#128512;</p></h4> <br><br>Click here to --> <a href='login.html'>Login </a> </center>";
+    echo "<br><br> <center><h1>YOUR REGISTRATION IS  SUCCESSFULL  <span style='color: green; font-size:30px'>&#x2713;</span></h1></center> <br><br>".
+        "<center><h4>THANK YOU FOR REGISTERING <p style='font-size:40px'>&#128512;</pstyle></h4> <h4><br> CLICK BELOW TO LOGIN AND CHECK YOUR DASHBOARD</h4><br><br> <a href='login.html'><input type='submit' value =Login ></a> </center>";
 
 }
 
 
-// Following data gives result as array of list of associative arrays 
+// Following data gives result as array of list of associative arrays
 //$database_check_result = mysqli_fetch_all($database_check);
 
 
@@ -157,42 +157,42 @@ $table_create = mysqli_query($connection,$table_create_query);
 if(fn_database_check($database_check_result,$database_name)===false){
 
     $database_create;
-    echo "<br>Database Created";
+//    echo "<br>Database Created";
 
 
     $use_database;
-    echo "<br>"."Database used";
+//    echo "<br>"."Database used";
 
     $table_check = mysqli_query($connection,"show tables from "." ".$database_name);
     $table_check_result = mysqli_fetch_all($table_check);
 
     if(fn_table_check($table_check_result,$table_name) === false){
         $table_create;
-        echo "<br> Table created successfully";
-        send_data_to_server($connection,$table_name);
-    }
-else{
-    {echo "<br>Table Already Existed";
-        send_data_to_server($connection,$table_name);
-    }
-    }
-
-}
-else{
-    echo "<br> Database Already Existed";
-    $table_check = mysqli_query($connection,"show tables from "." ".$database_name);
-    $table_check_result = mysqli_fetch_all($table_check);
-
-    if(fn_table_check($table_check_result,$table_name) === false){
-        $table_create;
-        echo "<br> Table created successfully";
+//        echo "<br> Table created successfully";
         send_data_to_server($connection,$table_name);
     }
     else{
-        {echo "<br>Table Already Existed";
+//        {echo "<br>Table Already Existed";
             send_data_to_server($connection,$table_name);
         }
     }
+
+
+else{
+//    echo "<br> Database Already Existed";
+    $table_check = mysqli_query($connection,"show tables from "." ".$database_name);
+    $table_check_result = mysqli_fetch_all($table_check);
+
+    if(fn_table_check($table_check_result,$table_name) === false){
+        $table_create;
+//        echo "<br> Table created successfully";
+        send_data_to_server($connection,$table_name);
+    }
+    else{
+//        {echo "<br>Table Already Existed";
+            send_data_to_server($connection,$table_name);
+        }
+
 }
 
 ?>
