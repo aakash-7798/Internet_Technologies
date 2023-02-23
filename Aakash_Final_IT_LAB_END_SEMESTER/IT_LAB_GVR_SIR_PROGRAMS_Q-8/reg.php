@@ -17,7 +17,7 @@
 
 // Establish a connection to xampp server
 // Change the below port number to the portnumber what you see when you start mysql in xampp
-$server_name = "localhost:8111";
+$server_name = "localhost:3306";
 // The following are same for every xampp server by default;
 $server_username = "root";
 $server_password = "";
@@ -38,8 +38,8 @@ $connection = mysqli_connect($server_name,$server_username,$server_password) ;
 
 function fn_database_check($databases,$db_name){
     $db_exists=false;
-    foreach($databases as $x){
-        if($x[0][0]==$db_name){
+    for($x=0;$x<count($databases);$x++){
+        if($databases[$x][0]==$db_name){
             $db_exists =true;
             break;
         }
@@ -52,8 +52,8 @@ function fn_database_check($databases,$db_name){
 
 function fn_table_check($tables,$table_name){
     $tb_exists = false;
-    foreach ($tables as $t){
-        if($t[0][0]==$table_name){
+    for($t=0;$t<count($tables);$t++){
+        if($tables[$t][0]==$table_name){
             $tb_exists=true;
             break;
         }
@@ -79,6 +79,8 @@ $insert_values = "Insert into"." ".$tab_name." "."(FirstName,LastName,Email,Gend
 
     if(!mysqli_stmt_prepare($stmt,$insert_values)){
         die(mysqli_error($connection));
+        echo " <br><br> <center><h1>Your ReGistration is Unsuccessfull  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <br><br> ".
+            "<center><h4>ReGister Once Again <p>&#128542;</p></h4> <br><br>Click here to --> <a href='reg.html'>Register</a> </center>";
     }
 
     mysqli_stmt_bind_param($stmt,'ssssssss',$Firstname,$Lastname,$email,$gender,$loginid,$password,$contact,$address);
@@ -125,6 +127,7 @@ $table_create_query = "CREATE TABLE if not exists"." ".$table_name."(".
     .")";
 $table_create = mysqli_query($connection,$table_create_query);
 
+//print_r(count($database_check_result));
 
 //if(mysqli_num_rows($database_check)===0){
 //    $database_create;
@@ -154,7 +157,8 @@ $table_create = mysqli_query($connection,$table_create_query);
 if(fn_database_check($database_check_result,$database_name)===false){
 
     $database_create;
-    echo "Database Created";
+    echo "<br>Database Created";
+
 
     $use_database;
     echo "<br>"."Database used";
@@ -169,7 +173,8 @@ if(fn_database_check($database_check_result,$database_name)===false){
     }
 else{
     {echo "<br>Table Already Existed";
-        send_data_to_server($connection,$table_name);}
+        send_data_to_server($connection,$table_name);
+    }
     }
 
 }
@@ -185,7 +190,8 @@ else{
     }
     else{
         {echo "<br>Table Already Existed";
-            send_data_to_server($connection,$table_name);}
+            send_data_to_server($connection,$table_name);
+        }
     }
 }
 
