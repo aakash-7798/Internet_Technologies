@@ -18,7 +18,7 @@ $password = md5($_POST["pswd"]);
 //echo substr("9951414365414365",0,10)."<br>";
 
 
-$data_query = mysqli_query($connection,"select * from {$table_name}  ");
+$data_query = mysqli_query($connection,"select * from {$table_name} where Password = '{$password}'");
 $data_query_result = mysqli_fetch_all($data_query);
 //print_r($credit_query_result[0][6]);
 
