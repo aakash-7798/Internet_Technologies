@@ -82,13 +82,34 @@ function send_data_to_server($connection,$tab_name){
         echo " <br><br> <center><h1>YOUR REGISTRATION IS  UNSUCCESSFULL  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <br><br> ".
             "<center><h4>REGISTER ONCE AGAIN <p style='font-size:40px'>&#128542;</p></h4> <h4><br> CLICK BELOW TO REGISTER</h4><br><br><a href='reg.html'><input type='submit' value =Register ></a> </center>";
     }
+    
+    $email_data =  mysqli_num_rows(mysqli_query($connection,"select Email from {$tab_name} where Email='{$email}'"));
+    $loginid_data = mysqli_num_rows(mysqli_query($connection,"select LoginId from {$tab_name} where LoginId='{$loginid}'"));
 
-    mysqli_stmt_bind_param($stmt,'ssssssss',$Firstname,$Lastname,$email,$gender,$loginid,$password,$contact,$address);
-    mysqli_stmt_execute($stmt);
+    if($email_data>0){
+        if($loginid_data>0){
+            echo " <br><br> <center><h1>YOUR REGISTRATION IS  UNSUCCESSFULL  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <center><h3 style='color: red'>Email and LoginID Already Exists</h3></center><br><br> ".
+                "<center><h4>REGISTER ONCE AGAIN <p style='font-size:40px'>&#128542;</p></h4> <h4><br> CLICK BELOW TO REGISTER</h4><br><br><a href='reg.html'><input type='submit' value =Register ></a> </center>";
+        }
+        else{
+            echo " <br><br> <center><h1>YOUR REGISTRATION IS  UNSUCCESSFULL  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <center> <h3 style='color: red'>Email Already Exists</h3></center><br><br> ".
+                "<center><h4>REGISTER ONCE AGAIN <p style='font-size:40px'>&#128542;</p></h4> <h4><br> CLICK BELOW TO REGISTER</h4><br><br><a href='reg.html'><input type='submit' value =Register ></a> </center>";
+        }
+    }
+    elseif (!$email_data>0){
+        if($loginid_data>0){
+            echo " <br><br> <center><h1>YOUR REGISTRATION IS  UNSUCCESSFULL  <span style='color: red; font-size:30px'>&#x274C;</span></h1></center> <center><h3 style='color: red'>LoginId Already Exists</h3></center><br><br> ".
+                "<center><h4>REGISTER ONCE AGAIN <p style='font-size:40px'>&#128542;</p></h4> <h4><br> CLICK BELOW TO REGISTER</h4><br><br><a href='reg.html'><input type='submit' value =Register ></a> </center>";
+        }
+        else{
+            mysqli_stmt_bind_param($stmt,'ssssssss',$Firstname,$Lastname,$email,$gender,$loginid,$password,$contact,$address);
+            mysqli_stmt_execute($stmt);
 //     echo "<br> Data Submitted Succesfully...";
-    echo "<br><br> <center><h1>YOUR REGISTRATION IS  SUCCESSFULL  <span style='color: green; font-size:30px'>&#x2713;</span></h1></center> <br><br>".
-        "<center><h4>THANK YOU FOR REGISTERING <p style='font-size:40px'>&#128512;</pstyle></h4> <h4><br> CLICK BELOW TO LOGIN AND CHECK YOUR DASHBOARD</h4><br><br> <a href='login.html'><input type='submit' value =Login ></a> </center>";
+            echo "<br><br> <center><h1>YOUR REGISTRATION IS  SUCCESSFULL  <span style='color: green; font-size:30px'>&#x2713;</span></h1></center> <br><br>".
+                "<center><h4>THANK YOU FOR REGISTERING <p style='font-size:40px'>&#128512;</pstyle></h4> <h4><br> CLICK BELOW TO LOGIN AND CHECK YOUR DASHBOARD</h4><br><br> <a href='login.html'><input type='submit' value =Login ></a> </center>";
 
+        }
+    }
 }
 
 
