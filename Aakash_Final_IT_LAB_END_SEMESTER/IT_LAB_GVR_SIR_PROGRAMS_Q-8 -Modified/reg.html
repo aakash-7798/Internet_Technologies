@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Register</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<script type="text/javascript" src="reg_validate.js"></script>
+<form name="regform" action="reg.php" method="post" onsubmit="return reg_validate()">
+    <h3>Register Here</h3>
+
+    <label for="fn">FirstName</label>
+    <!--    <input type="text" placeholder="Email or Phone" id="username">-->
+    <input type="text" id="fn" name="fname" required="required" placeholder="Firstname" autofocus/>
+
+
+    <label for="ln">LastName</label>
+    <input type="text" id="ln" name="lname" required="required" placeholder="Lastname" autofocus/>
+
+    <label for="eml">Email</label>
+    <input type="email" id="eml" name="email" required="required" placeholder="abc@gmail.com"/>
+
+    <label>Gender</label>
+<!--    <label for="ml">-->
+    Male      <input type="radio" id="ml"  name="gender" value="Male" required="required"/>
+    <br>
+    Female<input type="radio" id="fml"  name="gender" value="Female" required="required"/>
+<!--        </label>-->
+<!--    <label for="fml">-->
+
+<!--    </label>-->
+    <label for="lid">LoginID</label>
+    <input type="text" id="lid" name="lgnid" required="required" placeholder="eg.21031F0005"/>
+
+    <label for="psd">Password</label>
+    <input type="password" id="psd" name="pswd" required="required" placeholder="Password"/>
+
+    <label for="phn">Contact</label>
+    <input type="text" id="phn" name="phno" required="required" placeholder="eg.9999999999"/>
+
+    <label>Address</label>
+         <select name="address" required>
+         <option value="">select state</option>
+         <option value="Telangana"> Telangana</option>
+         <option value="AndhraPradesh">AndhraPradesh</option>
+         <option value="TamilNadu">TamilNadu</option>
+         <option value="Karnataka">Karnataka</option>
+         <option value="Kerala">Kerala</option>
+         </select>
+
+
+    <button type="submit"  >Register</button>
+    <!--    <div class="social">-->
+    <!--        <div class="go"><i class="fab fa-google"></i>  Google</div>-->
+    <!--        <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>-->
+    <!--    </div>-->
+</form>
+<br><br>
+<b style="color: red">
+    Instructions for LoginId, Password and  MobileNumber
+</b>
+<p>1. LoginID consists of 9 digits and 1 character
+<p>6th Space is alphabet and</p>
+<p>remaining are digits</p>
+</p>
+
+<p>
+    2. Password consists of
+<p>minimum 8 and maximum 16 characters,
+    at least</p>
+
+<p>    one upper case letter</p>
+    <p>one lower case letter</p>
+    <p>one number and one special character:</p>
+</p>
+<p>
+    3. Mobile Number should be exactly 10 digits
+    <p>No need to mention country code</p>
+    <p>Just enter 10Digit number.</p>
+
+</p>
+</body>
+</html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--&lt;!&ndash;  <meta charset="ISO-8859-1">&ndash;&gt;-->
+<!--<title>Registration</title>-->
+<!--&lt;!&ndash; <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"> &ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<h1 align="center" >REGISTERATION FOR AAKASH ONLINE BOOK STORAGE </h1>&ndash;&gt;-->
+<!--<script type="text/javascript" src="reg_validate.js"></script>-->
+<!--<form name="regform" action="reg.php" method="post" onsubmit="return reg_validate()">-->
+<!--<br><br><br><br><br><br>-->
+<!--<table align="center">-->
+<!--  <tr>-->
+<!--      <td >FirstName</td>-->
+<!--      <td>-->
+<!--       <input type="text" id="fn" name="fname" required="required"/>-->
+<!--     </td>-->
+<!--   </tr>-->
+<!--   <tr>-->
+<!--     <td>LastName</td>-->
+<!--      <td>-->
+<!--      <input type="text" id="ln" name="lname" required="required"/>-->
+<!--     </td>-->
+<!--     </tr>-->
+<!--     <tr>-->
+<!--     <td>Email</td>-->
+<!--     <td>-->
+<!--     <input type="email" id="eml" name="email" required="required"/>-->
+<!--     </td>-->
+<!--     </tr>-->
+<!--     <tr>-->
+<!--     <td>Gender</td>-->
+<!--     <td><input type="radio" name="gender" value="Male" required="required">Male&nbsp;&nbsp;-->
+<!--     <input type="radio" name="gender" value="Female" required="required">Female</td>-->
+<!--     </tr>-->
+<!--     <tr>-->
+<!--     <td>LoginId</td>-->
+<!--     <td>-->
+<!--     <input type="text" id="lid" name="lgnid" required="required" placeholder="CollegeId eg.21031F0005"/>-->
+<!--     </td>-->
+<!--     </tr>-->
+<!--     -->
+<!--     <tr>-->
+<!--     <td>Password</td>-->
+<!--     <td>-->
+<!--      <input type="password" id="psd" name="pswd" required="required"/>-->
+<!--      </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--      <td>Contact</td>-->
+<!--      <td>-->
+<!--      <input type="text" id="phn" name="phno" required="required"/>-->
+<!--      </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--     <td>Address</td>-->
+<!--     <td>-->
+<!--     <select name="address" required>-->
+<!--     <option value="">select state</option>-->
+<!--     <option value="Telangana"> Telangana</option>-->
+<!--     <option value="AndhraPradesh">AndhraPradesh</option>-->
+<!--     <option value="TamilNadu">TamilNadu</option>-->
+<!--     <option value="Karnataka">Karnataka</option>-->
+<!--     <option value="Kerala">Kerala</option>-->
+<!--     </select>-->
+<!--      </td>-->
+<!--      </tr>-->
+<!--      </table>-->
+<!--    <div align="center">-->
+<!--    <br><br>-->
+<!--    <input type="submit" value="Register" />-->
+<!--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--    <input type="reset" value="Clear"/>-->
+<!--    </div>-->
+<!--    -->
+<!--     &lt;!&ndash;-->
+<!--      <input type="text" id="ad" name="addrs" required="required" placeholder="Enter Only State.."/> -->
+<!--       &ndash;&gt;-->
+<!--     -->
+<!--</form>-->
+<!--<br><br>-->
+<!--<b style="color: red">-->
+<!--  Instructions for LoginId, Password and  MobileNumber-->
+<!--</b>-->
+<!--<p>-->
+<!-- 1. LoginID consists of 9 digits and 1 character-->
+<!--  ,6th Space is alphabet and -->
+<!--  remaining are digits-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  2. Password consists of-->
+<!--  minimum 8 and maximum 16 characters,-->
+<!--  at least-->
+<!--  one upper case letter,-->
+<!--  one lower case letter,-->
+<!--  one number and one special character:-->
+<!--</p>-->
+<!--<p>-->
+<!--  3. Mobile Number should be exactly 10 digits-->
+<!--  ,No need to mention country code,-->
+<!--  Just enter 10Digit number.-->
+
+<!--</p>-->
+<!--</body>-->
+<!--</html>-->

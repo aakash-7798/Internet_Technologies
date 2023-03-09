@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+<script type="text/javascript" src="payvalidation.js">
+</script>
+<form name="payform" method="post" action="payment.php" onsubmit="return frmvalidation()">
+    <label>CREDIT CARD NUMBER</label>
+        <input type="text" name = "crdcd" required="required" placeholder="eg.1234567890567890">
+    <label>PASSWORD</label>
+        <input type="password" name = "pswd" required="required" placeholder="password">
+        <button type="submit" >PROCEED TO PAY</button>
+</form>
+<br><br>
+
+<b style="color: red"> INSTRUCTIONS FOR CREDITCARDNUMBER</b>
+<br>
+<p>1. CreditCard is a 16 digit number</p>
+<p>2. First 10 digit is your phone number</p>
+<p>remaining 6 digits is last six digits of your phone number</p>
+<p>3.Example( phno.1234567890 )</p>
+<p>creditcardnumber = 1234567890567890)</p>
+
+</body>
+</html>
