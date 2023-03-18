@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+</head>
+<body>
+<script type="text/javascript" src="shpvalidate.js">
+    </script>
+<center>
+    <h1>Shopping Cart</h1>
+</center>
+    <br><br><br><br><br>
+<form name = "shpfrm" method="post" action="payment.html" onsubmit="return frmvalidation()">
+    <table align="center">
+        <tr>
+            <td>
+                TextBooks
+            </td>
+            <td>
+                <select name="booklist" required>
+                    <option value="">Select</option>-->
+                    <optgroup label="Hardware Books">
+                        <option value="TCRPH">The Complete Reference PC Hardware</option>
+                        <option value="CH">Computer Hardware</option>
+                        <option value="MCH">Modern Computer Hardware</option>
+                    </optgroup>
+                    <optgroup label="Software Books">
+                        <option value="JTCR">Java The Complete Reference</option>
+                        <option value="ATBSWP">Automate the Boring Stuff With Python</option>
+                        <option value="FADC">Flutter and Dart Cookbook </option>
+                    </optgroup>
+                    <optgroup label="Magazines">
+                        <option value="TN">TimesNow</option>
+                        <option value="FB">Forbes</option>
+                        <option value="NYM">NewYork Magazine</option>
+                    </optgroup>
+<!--                    <optgroup label="Select the book">-->
+<!--                        <option selected="select the book">Select the book</option>-->
+<!--                        <option value="JAVA">JAVA</option>-->
+<!--                        <option value="PYTHON">PYTHON</option>-->
+<!--                        <option value="FLUTTER">FLUTTER</option>-->
+<!--                        <option value="MYSQL">MYSQL</option>-->
+<!--                        <option value="AWS">AWS</option>-->
+<!--                    </optgroup>-->
+
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Quantity
+            </td>
+            <td>
+                <input type="text" id="qty" name="qnty" required="required">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                    <input type="submit" value="Continue to payment" />
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
