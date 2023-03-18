@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<userlist>
+
+    <user>
+        <userid>21031F0031</userid>
+        <Name>Ramesh</Name>
+        <gender>Male</gender>
+        <contact>7894561463</contact>
+        <address>Telangana</address>
+    </user>
+
+
+    <user>
+        <userid>21031F0032</userid>
+        <Name>Suresh</Name>
+        <gender>Male</gender>
+        <contact>7894786478</contact>
+        <address>TamilNadu</address>
+    </user>
+
+    <user>
+        <userid>21031F0033</userid>
+        <Name>Geetha</Name>
+        <gender>Female</gender>
+        <contact>8975461463</contact>
+        <address>Kerala</address>
+    </user>
+
+    <user>
+        <userid>21031F0034</userid>
+        <Name>Seetha</Name>
+        <gender>Female</gender>
+        <contact>9456471463</contact>
+        <address>Telangana</address>
+    </user>
+
+    <user>
+        <userid>21031F0035</userid>
+        <Name>Ram</Name>
+        <gender>Male</gender>
+        <contact>9463147897</contact>
+        <address>UttarPradesh</address>
+    </user>
+
+
+</userlist>
